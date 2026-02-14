@@ -13,6 +13,7 @@ function App() {
 
   useEffect(() => {
     axios.get("/api/cart-items?expand=product").then((response) => {
+      // Query parameter lets us add additional information to our request
       setCart(response.data);
     });
   }, []);
