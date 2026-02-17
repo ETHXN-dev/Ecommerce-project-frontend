@@ -7,10 +7,16 @@ import "./HomePage.css";
 export function HomePage({ cart }) {
   const [products, setProducts] = useState([]);
 
+  // async is made as another function becuase it returns a promise and useEffect cant return a promise
   useEffect(() => {
-    axios.get("/api/products").then((response) => {
+    // use effect can't return a promise
+    const getHomeData = async () => {
+      const response = await axios.get("/api/products");
       setProducts(response.data);
-    });
+    };
+
+    // Call the new function
+    getHomeData();
   }, []);
 
   return (
