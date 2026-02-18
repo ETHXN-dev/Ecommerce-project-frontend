@@ -1,10 +1,10 @@
 import axios from "axios";
-import dayjs from "dayjs";
+// import dayjs from "dayjs";
 import { useState, useEffect, Fragment } from "react";
 import { Header } from "../../components/Header";
-import { formatMoney } from "../../utils/money";
-import BuyAgain from "../../assets/images/icons/buy-again.png";
+// import { formatMoney } from "../../utils/money";
 import "./OrdersPage.css";
+import { OrdersGrid } from "./OrdersGrid";
 
 export function OrdersPage({ cart }) {
   const [orders, setOrders] = useState([]);
@@ -28,6 +28,8 @@ export function OrdersPage({ cart }) {
       <div className="orders-page">
         <div className="page-title">Your Orders</div>
 
+        <OrdersGrid orders={orders} />
+        {/*
         <div className="orders-grid">
           {orders.map((order) => {
             return (
@@ -93,7 +95,7 @@ export function OrdersPage({ cart }) {
               </div>
             );
           })}
-        </div>
+        </div>*/}
       </div>
     </>
   );
