@@ -27,9 +27,6 @@ export function TrackingPage({ cart }) {
     return item.productId === productId;
   });
 
-  // console.log(order);
-  console.log(selectedProduct);
-
   const { product, quantity, estimatedDeliveryTimeMs } = selectedProduct;
 
   const totalDeliveryTimeMs = estimatedDeliveryTimeMs - order.orderTimeMs;
