@@ -4,7 +4,7 @@ import { Header } from "../../components/Header";
 import { ProductsGrid } from "./ProductsGrid";
 import "./HomePage.css";
 
-export function HomePage({ cart }) {
+export function HomePage({ cart, loadCart }) {
   const [products, setProducts] = useState([]);
 
   // async is made as another function becuase it returns a promise and useEffect cant return a promise
@@ -26,7 +26,7 @@ export function HomePage({ cart }) {
       <Header cart={cart} />
 
       <div className="home-page">
-        <ProductsGrid products={products} />
+        <ProductsGrid products={products} loadCart={loadCart} />
       </div>
     </>
   );
